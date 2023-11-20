@@ -1,9 +1,8 @@
+console.log("Iframe Loaded");
 
-
-
-onmessage = (e) => {
-    console.log("Message Received from main script");
-    postMessage("Message from Worker");
-}
-
+setTimeout(() => {
+    navigator.serviceWorker.register("./sw.js").then(res => {
+        console.log("Service worker registered");
+    })
+}, 5000);
 
