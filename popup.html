@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+<!--[if lt IE 7]><html lang="en" class="no-js ie6"><![endif]-->
+<!--[if IE 7]>   <html lang="en" class="no-js ie7"><![endif]-->
+<!--[if IE 8]>   <html lang="en" class="no-js ie8"><![endif]-->
+<!--[if IE 9]>   <html lang="en" class="no-js ie9"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<html lang="en" class="no-js">
+<!--<![endif]-->
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>L & T</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+	<style>
+		body {
+			padding: 0;
+			margin: 0;
+			background: transparent;
+		}
+
+		.popupContainer {
+			position: relative;
+			width: 840px;
+			margin: 0 auto;
+			background: #fff;
+		}
+
+		.desktopViewOn {
+			display: block;
+		}
+
+		.mobileViewOn {
+			display: none;
+		}
+
+		a {
+			display: block;
+			margin: 0;
+			padding: 0;
+		}
+
+		@media screen and (max-width: 767px) {
+			.desktopViewOn {
+				display: none;
+			}
+
+			.mobileViewOn {
+				display: block;
+			}
+
+			.popupContainer {
+				width: 100%;
+			}
+		}
+
+		/*@media screen and (max-width: 540px) {
+		.popupContainer{height:420px;}
+	}*/
+	</style>
+</head>
+
+<body>
+	<div class="popupContainer">
+		<a onclick="clicked()" href="https://www.resulticks.com/" target="_blank" class="desktopViewOn"><img
+				src="images/banner-img-desktop.jpg" alt="Desktop banner" /></a>
+		<a href="https://www.resulticks.com/" target="_blank" class="mobileViewOn"><img
+				src="images/banner-img-mobile.jpg" alt="Mobile banner" /></a>
+	</div>
+</body>
+<script>
+	function clicked() {
+		try {
+			let selector = `document.querySelector("[href='#enquiryModal']")`;
+			window.parent.postMessage({
+				method: "",
+				script: `document.querySelector("[href='#enquiryModal']")`
+			})
+		} catch (error) {
+			console.log("Error occurred: ", error);
+		}
+	}
+</script>
+
+</html>
