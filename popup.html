@@ -6,79 +6,51 @@
 <!--[if (gt IE 9)|!(IE)]><!-->
 <html lang="en" class="no-js">
 <!--<![endif]-->
-
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<title>L & T</title>
-	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
-	<style>
-		body {
-			padding: 0;
-			margin: 0;
-			background: transparent;
-		}
-
-		.popupContainer {
-			position: relative;
-			width: 840px;
-			margin: 0 auto;
-			background: #fff;
-		}
-
-		.desktopViewOn {
-			display: block;
-		}
-
-		.mobileViewOn {
-			display: none;
-		}
-
-		a {
-			display: block;
-			margin: 0;
-			padding: 0;
-		}
-
-		@media screen and (max-width: 767px) {
-			.desktopViewOn {
-				display: none;
-			}
-
-			.mobileViewOn {
-				display: block;
-			}
-
-			.popupContainer {
-				width: 100%;
-			}
-		}
-
-		/*@media screen and (max-width: 540px) {
-		.popupContainer{height:420px;}
-	}*/
-	</style>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>L & T</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+  <style>
+	body{padding:0;margin:0;background:transparent;}
+	.popupContainer{position:relative;width:840px;margin:0 auto;background:#fff;}
+	.popupContainer img{width:100%;height:100%}
+	.desktopViewOn{display:block;}
+	.mobileViewOn{display:none;}
+	a{display:block;margin:0;padding:0;}
+	@media screen and (max-width: 767px) {
+		.desktopViewOn{display:none;}
+		.mobileViewOn{display:block;}
+		.popupContainer{width:100%;height:400px;}
+	}
+  </style>
 </head>
 
 <body>
-	<div onclick="clicked()" class="popupContainer">
-		<a onclick="clicked()" href="https://www.resulticks.com/" target="_blank" class="desktopViewOn"><img
-				src="images/banner-img-desktop.jpg" alt="Desktop banner" /></a>
-		<a href="https://www.resulticks.com/" target="_blank" class="mobileViewOn"><img
-				src="images/banner-img-mobile.jpg" alt="Mobile banner" /></a>
-	</div>
-</body>
-<script>
-	function clicked() {
-		try {
-			let selector = `document.querySelector("[href='#enquiryModal']")`;
-			window.parent.postMessage({
-				method: "",
-				script: `document.querySelector("[href='#enquiryModal']")`
-			})
-		} catch (error) {
-			console.log("Error occurred: ", error);
-		}
-	}
-</script>
+<div class="popupContainer" onclick="clicked()" href="https://dev.lntrealty.com/">
+	<img src="images/banner-img-desktop.jpg" alt="Desktop banner" class="desktopViewOn" />
+	<img src="images/banner-img-mobile.jpg" alt="Mobile banner" class="mobileViewOn" />
+</div>
+<script type="text/javascript">
+	try {
+		document.addEventListener('DOMContentLoaded', (event) => {
+			try {
+				document.querySelector(".popupContainer").removeAttribute('href');
+			} catch (error) { }
+		})
 
+		function clicked() {
+			try {
+				let selector = `document.querySelector("[href='#enquiryModal']")`;
+				let data = {
+					method: "",
+					script: selector
+				}
+				window.parent.postMessage(JSON.stringify(data), "*");
+			} catch (error) {
+				console.log("Error occurred: ", error);
+			}
+		}
+	} catch (error) { }
+</script>
+</body>
 </html>
