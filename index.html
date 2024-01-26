@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WFNM9MEYZC"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-WFNM9MEYZC');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Sample Webpage</h1>
+    <button onclick="sendData()">Click me</button>
+    <script>
+        function sendData() {
+            console.log('====================================');
+            console.log("Send Data called");
+            console.log('====================================');
+            const eventData = {
+                sessionId: "Sample session Id"
+            };
+            gtag('event', 'TestSdkEvent', eventData);
+            console.log("Event data sent");
+        }
+    </script>
+</body>
+
+</html>
