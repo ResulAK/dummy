@@ -50,35 +50,35 @@ function uniqueIdGenerator() {
             try {
                 keys.push(profileData);
             } catch (error) {console.log("UniqueIdGenerator:: profileData passing err")};
-            keys.push(navigator.userAgent);
-            keys.push(navigator.language);
-            keys.push(screen.colorDepth);
-            if (this.screen_resolution) {
-                var resolution = this.getScreenResolution();
-                if (typeof resolution !== "undefined") {
-                    keys.push(this.getScreenResolution().join("x"));
-                }
-            }
-            keys.push(new Date().getTimezoneOffset());
-            keys.push(this.hasSessionStorage());
-            keys.push(this.hasLocalStorage());
-            keys.push(!!window.indexedDB);
-            if (document.body) {
-                try {
-                    keys.push(typeof document.body.addBehavior);
-                } catch (error) {
-                    console.log("UniqueIdGenerator:: keys push err");
-                }
-            } else {
-                keys.push(typeof undefined);
-            }
-            keys.push(typeof window.openDatabase);
-            keys.push(navigator.cpuClass);
-            keys.push(navigator.platform);
-            keys.push(navigator.doNotTrack);
-            keys.push(this.getPluginsString());
+            // keys.push(navigator.userAgent);
+            // keys.push(navigator.language);
+            // keys.push(screen.colorDepth);
+            // if (this.screen_resolution) {
+            //     var resolution = this.getScreenResolution();
+            //     if (typeof resolution !== "undefined") {
+            //         keys.push(this.getScreenResolution().join("x"));
+            //     }
+            // }
+            // keys.push(new Date().getTimezoneOffset());
+            // keys.push(this.hasSessionStorage());
+            // keys.push(this.hasLocalStorage());
+            // keys.push(!!window.indexedDB);
+            // if (document.body) {
+            //     try {
+            //         keys.push(typeof document.body.addBehavior);
+            //     } catch (error) {
+            //         console.log("UniqueIdGenerator:: keys push err");
+            //     }
+            // } else {
+            //     keys.push(typeof undefined);
+            // }
+            // keys.push(typeof window.openDatabase);
+            // keys.push(navigator.cpuClass);
+            // keys.push(navigator.platform);
+            // keys.push(navigator.doNotTrack);
+            // keys.push(this.getPluginsString());
             if (this.canvas && this.isCanvasSupported()) {
-                keys.push(this.getCanvasFingerprint());
+                // keys.push(this.getCanvasFingerprint());
             }
             if (this.hasher) {
                 return this.hasher(keys.join("###"), 31);
