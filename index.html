@@ -59,9 +59,10 @@
             console.log("FirstMethod called");
             console.log('====================================');
             const eventData = {
-                firstParam: "FirstMethod"
+                firstParam: "FirstMethod",
+                send_to: 'G-GFFGBBR7C4'
             };
-            gtag('G-GFFGBBR7C4', 'event', 'FirstMethod', eventData);
+            gtag('event', 'FirstMethod', eventData);
             console.log("FirstMethod data sent");
         }
 
@@ -70,9 +71,10 @@
             console.log("SecondMethod called");
             console.log('====================================');
             const eventData = {
-                secondParam: "SecondMethod"
+                secondParam: "SecondMethod",
+                send_to: 'G-JB1JC5870D'
             };
-            gtag('G-JB1JC5870D', 'event', 'SecondMethod', eventData);
+            gtag('event', 'SecondMethod', eventData);
             console.log("SecondMethod data sent");
         }
     </script>
