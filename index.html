@@ -51,29 +51,29 @@
 
 <body>
     <h1>Sample Webpage</h1>
-    <button onclick="sendData()">Click me</button>
-    <button onclick="sendSecondData()">Second Button for second data</button>
+    <button onclick="FirstMethod()">FirstMethod</button>
+    <button onclick="SecondMethod()">SecondMethod</button>
     <script>
-        function sendData() {
+        function FirstMethod() {
             console.log('====================================');
-            console.log("Send Data called");
+            console.log("FirstMethod called");
             console.log('====================================');
             const eventData = {
-                sessionId: "Sample session Id"
+                firstParam: "FirstMethod"
             };
-            gtag('event', 'TestSdkEvent', eventData);
-            console.log("Event data sent");
+            gtag('G-GFFGBBR7C4', 'event', 'FirstMethod', eventData);
+            console.log("FirstMethod data sent");
         }
 
-        function sendSecondData() {
+        function SecondMethod() {
             console.log('====================================');
-            console.log("Second data called");
+            console.log("SecondMethod called");
             console.log('====================================');
             const eventData = {
-                testId: "1234"
+                secondParam: "SecondMethod"
             };
-            gtag('event', 'SecondSDKEvent', eventData);
-            console.log("SecondSDKEvent data sent");
+            gtag('G-JB1JC5870D', 'event', 'SecondMethod', eventData);
+            console.log("SecondMethod data sent");
         }
     </script>
 </body>
