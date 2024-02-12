@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cross Origin File</title>
+</head>
+<body>
+    <h1>Iframe page</h1>
+</body>
+    <script>
+        window.addEventListener("message", (event) => {
+
+            switch(event.data.methodName) {
+                case "setData":
+                    try {
+                        let returnObj = {
+                            response: "Success",
+                        }
+                        
+                        localStorage.setItem("PostMessageData", event.data.data)
+                    } catch (error) { }
+                case "getData":
+                    try {
+                        
+                    } catch (error) { }
+            }
+        })
+    </script>
+</html>
