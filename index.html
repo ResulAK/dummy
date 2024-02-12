@@ -3,7 +3,7 @@
 
 <head>
 
-    <!-- Google tag (gtag.js) -->
+    <!-- First Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-WFNM9MEYZC"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -12,6 +12,17 @@
 
         gtag('config', 'G-WFNM9MEYZC');
     </script>
+
+    <!-- Second Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-T06DR9KX58"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-T06DR9KX58');
+    </script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
@@ -20,6 +31,7 @@
 <body>
     <h1>Sample Webpage</h1>
     <button onclick="sendData()">Click me</button>
+    <button onclick="sendSecondData()">Second Button for second data</button>
     <script>
         function sendData() {
             console.log('====================================');
@@ -30,6 +42,17 @@
             };
             gtag('event', 'TestSdkEvent', eventData);
             console.log("Event data sent");
+        }
+
+        function sendSecondData() {
+            console.log('====================================');
+            console.log("Second data called");
+            console.log('====================================');
+            const eventData = {
+                testId: "1234"
+            };
+            gtag('event', 'SecondSDKEvent', eventData);
+            console.log("SecondSDKEvent data sent");
         }
     </script>
 </body>
