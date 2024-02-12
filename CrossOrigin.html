@@ -1,30 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cross Origin File</title>
 </head>
+
 <body>
     <h1>Iframe page</h1>
 </body>
-    <script>
-        window.addEventListener("message", (event) => {
+<script>
+    function setCookie(cname, cvalue, exdays) {
+        const d = new Date();
+        d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+        let expires = "expires=" + d.toUTCString();
+        document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+    }
 
-            switch(event.data.methodName) {
-                case "setData":
-                    try {
-                        let returnObj = {
-                            response: "Success",
-                        }
-                        
-                        localStorage.setItem("PostMessageData", event.data.data)
-                    } catch (error) { }
-                case "getData":
-                    try {
-                        
-                    } catch (error) { }
-            }
-        })
-    </script>
+    window.addEventListener("message", (event) => {
+
+        switch (event.data.methodName) {
+            case "setData":
+                try {
+                    let returnObj = {
+                        response: "Success",
+                    }
+
+                    // localStorage.setItem("PostMessageData", event.data.data)
+                    setCookie("Test", event.data.data, 365);
+                } catch (error) { }
+            case "getData":
+                try {
+
+                } catch (error) { }
+        }
+    })
+</script>
+
 </html>
