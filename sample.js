@@ -8,7 +8,7 @@ function setCookie(cname, cvalue, exdays, domain, path) {
     const d = new Date();
     d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
     let expires = "expires=" + d.toUTCString();
-    let cookieString = cname + "=" + cvalue + ";" + expires;
+    let cookieString = cname + "=" + cvalue;
 
     console.log(cookieString);
     // Add domain if provided
@@ -23,11 +23,13 @@ function setCookie(cname, cvalue, exdays, domain, path) {
         cookieString += ";path=/"; // Default path
     }
 
+    cookieString + ";" + expires;
+
     console.log(cookieString);
     document.cookie = cookieString;
 }
 
 setTimeout(() => {
     console.log("Setting cookie");
-    setCookie("Anand", "Krishna", 3, ".resulak.github.io");
+        
 }, 3000);
