@@ -23,7 +23,7 @@ function setCookie(cname, cvalue, exdays, domain, path) {
         cookieString += ";path=/"; // Default path
     }
 
-    cookieString + ";" + expires;
+    cookieString = cookieString + ";" + expires;
 
     console.log(cookieString);
     document.cookie = cookieString;
