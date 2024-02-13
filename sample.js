@@ -31,5 +31,7 @@ function setCookie(cname, cvalue, exdays, domain, path) {
 
 setTimeout(() => {
     console.log("Setting cookie");
-    setCookie("Anand", "Krishna", 3, ".resulak.github.io")
+    // setCookie("Anand", "Krishna", 3, ".resulak.github.io")
+
+    document.cookie = 'Hello=World; path=/; expires=Thu, 12 Feb 2026 12:10:24 GMT; domain=resulak.github.io; '
 }, 3000);
