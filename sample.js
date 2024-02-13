@@ -13,14 +13,14 @@ function setCookie(cname, cvalue, exdays, domain, path) {
     console.log(cookieString);
     // Add domain if provided
     if (domain) {
-        cookieString += "; domain=" + domain;
+        cookieString += ";domain=" + domain;
     }
 
     // Add path if provided
     if (path) {
-        cookieString += "; path=" + path;
+        cookieString += ";path=" + path;
     } else {
-        cookieString += "; path=/"; // Default path
+        cookieString += ";path=/"; // Default path
     }
 
     console.log(cookieString);
